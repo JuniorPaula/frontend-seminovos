@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import MainContainer from './components/MainContainer';
 import { UserProvider } from './context/userContex';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <UserProvider>
         <Header />
         <MainContainer>
+          <ToastContainer autoClose={3000} />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />

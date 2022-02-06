@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { RegisterContainer, Title } from './styled';
-import Input from '../../../components/Input';
 import { Link } from 'react-router-dom';
+import { Context } from '../../../context/userContex';
+import Input from '../../../components/Input';
 
 const Register = () => {
   const [user, setUser] = useState({});
+  const { register } = useContext(Context);
 
   function handleChange(e) {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -12,7 +14,7 @@ const Register = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(user);
+    register(user);
   }
 
   return (

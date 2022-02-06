@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
 import { primaryColor, secondayColor } from '../config/colors';
-//import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   *{
