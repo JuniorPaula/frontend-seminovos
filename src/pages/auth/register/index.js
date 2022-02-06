@@ -1,10 +1,18 @@
+import { useState } from 'react';
 import { RegisterContainer, Title } from './styled';
 import Input from '../../../components/Input';
 import { Link } from 'react-router-dom';
 
 const Register = () => {
+  const [user, setUser] = useState({});
+
   function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
     e.preventDefault();
+    console.log(user);
   }
 
   return (
@@ -16,7 +24,7 @@ const Register = () => {
         </Title>
       </div>
       <div className="box-right">
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
             text="Nome"
             type="text"
