@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { HeaderContainer, Navbar } from './styled';
 import Logo from '../../assets/img/logo.png';
 import { Context } from '../../context/userContex';
+import { FaSignOutAlt } from 'react-icons/fa';
 
 const Header = () => {
-  const { authenticated } = useContext(Context);
+  const { authenticated, logOut } = useContext(Context);
 
   return (
     <HeaderContainer>
@@ -19,7 +20,12 @@ const Header = () => {
             <Link to="/">Comprar</Link>
           </li>
           {authenticated ? (
-            <p>Logado!</p>
+            <>
+              <p>Logado!</p>
+              <li onClick={logOut}>
+                <FaSignOutAlt />
+              </li>
+            </>
           ) : (
             <>
               <li>

@@ -47,7 +47,21 @@ const useAuth = () => {
     navigate('/');
   }
 
-  return { authenticated, register };
+  /** função d logout */
+  function logOut() {
+    setAuthenticated(false);
+    localStorage.removeItem('token');
+    api.defaults.headers.Authoziration = undefined;
+    navigate('/');
+
+    /** flash message de sucesso */
+    toast.success('Logout realizado com sucesso!', {
+      theme: 'dark',
+      toastId: 'logout',
+    });
+  }
+
+  return { authenticated, register, logOut };
 };
 
 export default useAuth;
