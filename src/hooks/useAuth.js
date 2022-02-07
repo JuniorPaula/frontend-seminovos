@@ -24,7 +24,7 @@ const useAuth = () => {
         return response.data;
       });
 
-      authUser(data);
+      await authUser(data);
     } catch (err) {
       const msgErr = err.response.data.message;
       toast.error(msgErr, { theme: 'dark', toastId: 'err_api' });

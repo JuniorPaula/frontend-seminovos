@@ -1,8 +1,12 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { HeaderContainer, Navbar } from './styled';
 import Logo from '../../assets/img/logo.png';
+import { Context } from '../../context/userContex';
 
 const Header = () => {
+  const { authenticated } = useContext(Context);
+
   return (
     <HeaderContainer>
       <Navbar>
@@ -14,12 +18,18 @@ const Header = () => {
           <li>
             <Link to="/">Comprar</Link>
           </li>
-          <li>
-            <Link to="/login">Entrar</Link>
-          </li>
-          <li>
-            <Link to="/register">Cadastrar</Link>
-          </li>
+          {authenticated ? (
+            <p>Logado!</p>
+          ) : (
+            <>
+              <li>
+                <Link to="/login">Entrar</Link>
+              </li>
+              <li>
+                <Link to="/register">Cadastrar</Link>
+              </li>
+            </>
+          )}
         </ul>
       </Navbar>
     </HeaderContainer>
