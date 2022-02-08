@@ -32,6 +32,6 @@ export const Navbar = styled.nav`
   li,
   a {
     color: #f1f1f1;
-    padding: 0.5em 0.8em;
+    padding: 0.5em 0.4em;
   }
 `;
