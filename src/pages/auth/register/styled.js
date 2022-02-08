@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import {
-  blakColor,
   lightGreenColor,
   primaryColor,
+  secondayColor,
 } from '../../../config/colors';
 
 export const RegisterContainer = styled.div`
@@ -30,7 +30,7 @@ export const RegisterContainer = styled.div`
 `;
 
 export const Title = styled.h2`
-  color: ${blakColor};
+  color: ${secondayColor};
   font-size: 3em;
 
   .destaque {
