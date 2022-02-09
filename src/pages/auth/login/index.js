@@ -11,10 +11,10 @@ const Login = () => {
   return (
     <LoginContainer>
       <div className="box-left">
-        <img src={LogoLogin} />
+        <img src={LogoLogin} className="img-fluid" />
       </div>
       <div className="box-right">
-        <h2>Faça seu login</h2>
+        <h2>Seja bem vindo!</h2>
         <form>
           <Input
             text="E-mail"

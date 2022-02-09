@@ -13,7 +13,7 @@ export const InputContainer = styled.div`
   }
 
   input {
-    padding: 1em 0.7em;
+    padding: 0.4em 0.7em;
     border-radius: 5px;
     border: 1px solid ${lightGrayColor};
   }

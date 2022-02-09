@@ -20,7 +20,7 @@ export default createGlobalStyle`
     border: none;
     background: ${primaryColor};
     color: #fff;
-    padding: 10px 18px;
+    padding: 4em 8em;
     font-size: 18px;
     transition: all 300ms;
     border-radius: 5px;
