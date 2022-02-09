@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import MainContainer from './components/MainContainer';
 import { UserProvider } from './context/userContex';
 import { ToastContainer } from 'react-toastify';
+import Profile from './pages/User/Profile';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/user/profile" element={<Profile />} />
           </Routes>
         </MainContainer>
         <Footer />

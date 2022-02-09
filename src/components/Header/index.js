@@ -32,6 +32,9 @@ const Header = () => {
               </Nav.Link>
               {authenticated ? (
                 <>
+                  <Nav.Link eventKey={2} className="link" href="/user/profile">
+                    Perfil
+                  </Nav.Link>
                   <Nav.Link eventKey={2} className="link" onClick={logOut}>
                     Sair <FaSignOutAlt />
                   </Nav.Link>
