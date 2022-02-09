@@ -47,7 +47,22 @@ const useAuth = () => {
     navigate('/');
   }
 
-  /** função d logout */
+  /** função de login */
+  async function login(user) {
+    try {
+      const data = await api.post('/users/login', user).then((response) => {
+        return response.data;
+      });
+
+      await authUser(data);
+    } catch (err) {
+      const msgErr = err.response.data.message;
+      toast.error(msgErr, { theme: 'dark', toastId: 'err_login' });
+      return;
+    }
+  }
+
+  /** função de logout */
   function logOut() {
     setAuthenticated(false);
     localStorage.removeItem('token');
@@ -61,7 +76,7 @@ const useAuth = () => {
     });
   }
 
-  return { authenticated, register, logOut };
+  return { authenticated, register, logOut, login };
 };
 
 export default useAuth;

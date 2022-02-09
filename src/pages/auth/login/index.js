@@ -1,11 +1,21 @@
+import { useContext, useState } from 'react';
 import { LoginContainer } from './styled';
-import Input from '../../../components/Input';
 import { Link } from 'react-router-dom';
+import Input from '../../../components/Input';
 import LogoLogin from '../../../assets/img/logo-login.png';
+import { Context } from '../../../context/userContex';
 
 const Login = () => {
-  function handleChange() {
-    //
+  const [user, setUser] = useState({});
+  const { login } = useContext(Context);
+
+  function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    login(user);
   }
 
   return (
@@ -15,7 +25,7 @@ const Login = () => {
       </div>
       <div className="box-right">
         <h2>Seja bem vindo!</h2>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
             text="E-mail"
             type="email"
