@@ -3,6 +3,7 @@ import { Container } from 'react-bootstrap';
 import { ProfileContainer, Title } from './styled';
 import Input from '../../../components/Input';
 import api from '../../../utils/api';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -19,12 +20,41 @@ const Profile = () => {
       .then((response) => setUser(response.data));
   }, [token]);
 
-  function onFileChange() {
-    //
+  function onFileChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.files[0] });
   }
 
-  function handleChange() {
-    //
+  function handleChange(e) {
+    setUser({ ...user, [e.target.name]: e.target.value });
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    const formData = new FormData();
+
+    await Object.keys(user).forEach((key) => formData.append(key, user[key]));
+
+    await api
+      .patch(`/users/edit/${user._id}`, formData, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+          'Content-Type': 'Multipart/form-data',
+        },
+      })
+      .then((response) => {
+        toast.success('Atualização realizada com sucesso!', {
+          theme: 'dark',
+          toastId: 'success',
+        });
+
+        return response.data;
+      })
+      .catch((err) => {
+        const msgErr = err.response.data.message;
+        toast.error(msgErr, { theme: 'dark', toastId: 'err_edit' });
+        return;
+      });
   }
 
   return (
@@ -32,9 +62,9 @@ const Profile = () => {
       <Container>
         <Title>Perfil</Title>
         <p>preview da imagem</p>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input
-            text="image"
+            text="Imagem"
             type="file"
             name="image"
             handleOnChange={onFileChange}
