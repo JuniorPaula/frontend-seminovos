@@ -8,6 +8,7 @@ import MainContainer from './components/MainContainer';
 import { UserProvider } from './context/userContex';
 import { ToastContainer } from 'react-toastify';
 import Profile from './pages/User/Profile';
+import Dashboard from './pages/cars/Dashboard';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/user/profile" element={<Profile />} />
+            <Route path="/cars/owncars" element={<Dashboard />} />
           </Routes>
         </MainContainer>
         <Footer />

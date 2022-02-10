@@ -32,6 +32,9 @@ const Header = () => {
               </Nav.Link>
               {authenticated ? (
                 <>
+                  <Nav.Link eventKey={2} className="link" href="/cars/owncars">
+                    Meus Carros
+                  </Nav.Link>
                   <Nav.Link eventKey={2} className="link" href="/user/profile">
                     Perfil
                   </Nav.Link>
