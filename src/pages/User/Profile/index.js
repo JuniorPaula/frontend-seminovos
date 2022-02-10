@@ -7,6 +7,7 @@ import { toast } from 'react-toastify';
 
 const Profile = () => {
   const [user, setUser] = useState({});
+  const [preview, setPreiew] = useState('');
   const [token] = useState(localStorage.getItem('token') || '');
 
   /** recuperar os dados do usuário */
@@ -21,6 +22,7 @@ const Profile = () => {
   }, [token]);
 
   function onFileChange(e) {
+    setPreiew(e.target.files[0]);
     setUser({ ...user, [e.target.name]: e.target.files[0] });
   }
 
@@ -61,7 +63,16 @@ const Profile = () => {
     <ProfileContainer>
       <Container>
         <Title>Perfil</Title>
-        <p>preview da imagem</p>
+        {(user.image || preview) && (
+          <img
+            src={
+              preview
+                ? URL.createObjectURL(preview)
+                : `${process.env.API_URL}/images/users/${user.image}`
+            }
+            alt={user.name}
+          />
+        )}
         <form onSubmit={handleSubmit}>
           <Input
             text="Imagem"
