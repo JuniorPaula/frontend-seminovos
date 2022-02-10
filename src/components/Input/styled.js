@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { lightGrayColor } from '../../config/colors';
+import { blakColor, lightGrayColor } from '../../config/colors';
 
 export const InputContainer = styled.div`
   display: flex;
@@ -15,6 +15,7 @@ export const InputContainer = styled.div`
   input {
     padding: 0.4em 0.7em;
     border-radius: 5px;
+    color: ${blakColor};
     border: 1px solid ${lightGrayColor};
   }
 `;
