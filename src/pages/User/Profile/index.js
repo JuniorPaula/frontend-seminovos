@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
-import { ProfileContainer, Title } from './styled';
+import { ImageContainer, ProfileContainer, Title } from './styled';
+import { toast } from 'react-toastify';
+import { Image } from 'react-bootstrap';
 import Input from '../../../components/Input';
 import api from '../../../utils/api';
-import { toast } from 'react-toastify';
 
 const Profile = () => {
   const [user, setUser] = useState({});
@@ -64,14 +65,17 @@ const Profile = () => {
       <Container>
         <Title>Perfil</Title>
         {(user.image || preview) && (
-          <img
-            src={
-              preview
-                ? URL.createObjectURL(preview)
-                : `${process.env.API_URL}/images/users/${user.image}`
-            }
-            alt={user.name}
-          />
+          <ImageContainer>
+            <Image
+              className="rounded-circle image-profile"
+              src={
+                preview
+                  ? URL.createObjectURL(preview)
+                  : `${process.env.API_URL}/images/users/${user.image}`
+              }
+              alt={user.name}
+            />
+          </ImageContainer>
         )}
         <form onSubmit={handleSubmit}>
           <Input
