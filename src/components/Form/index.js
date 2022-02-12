@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import Input from '../Input';
 import TextArea from '../TextArea';
 
-const Form = ({ carData, btnText }) => {
+const Form = ({ carData, handleSubmit, btnText }) => {
   const [car, setCar] = useState(carData || {});
   const [preview, setPreview] = useState([]);
 
@@ -21,7 +21,7 @@ const Form = ({ carData, btnText }) => {
   function submit(e) {
     e.preventDefault();
     console.log(car);
-    //handleSubmit(car);
+    handleSubmit(car);
   }
 
   return (
@@ -109,7 +109,7 @@ const Form = ({ carData, btnText }) => {
 export default Form;
 
 Form.propTypes = {
-  //handleSubmit: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
   carData: PropTypes.object.isRequired,
   btnText: PropTypes.string.isRequired,
 };
