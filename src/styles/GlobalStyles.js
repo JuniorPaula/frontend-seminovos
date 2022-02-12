@@ -13,17 +13,11 @@ export default createGlobalStyle`
 
   body {
     font-family: 'Roboto', sans-serif;
+    background: #effbf8;
   }
 
   button {
-    cursor: pointer;
-    border: none;
-    background: ${primaryColor};
-    color: #fff;
-    padding: 4em 8em;
-    font-size: 18px;
-    transition: all 300ms;
-    border-radius: 5px;
+    border: none
   }
 
   a {

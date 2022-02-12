@@ -3,3 +3,4 @@ export const secondayColor = '#626060';
 export const lightGreenColor = '#1fb266';
 export const lightGrayColor = '#868686';
 export const blakColor = '#191919';
+export const redColor = '#93272F';
