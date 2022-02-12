@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { ImageContainer, ProfileContainer, Title } from './styled';
 import { toast } from 'react-toastify';
-import { Image } from 'react-bootstrap';
+import { URL_API } from '../../../config/urlApi';
 import Input from '../../../components/Input';
 import api from '../../../utils/api';
 
@@ -66,14 +66,14 @@ const Profile = () => {
         <Title>Perfil</Title>
         {(user.image || preview) && (
           <ImageContainer>
-            <Image
+            <img
               className="rounded-circle image-profile"
               src={
                 preview
                   ? URL.createObjectURL(preview)
-                  : `${process.env.API_URL}/images/users/${user.image}`
+                  : `${URL_API}/images/users/${user.image}`
               }
-              alt={user.name}
+              alt={user.image}
             />
           </ImageContainer>
         )}
