@@ -1,23 +1,51 @@
-//import { useState } from 'react';
-import { FormCar } from './styled';
+import { useState } from 'react';
+import { FormCar, Preview } from './styled';
+import { URL_API } from '../../config/urlApi';
 import PropTypes from 'prop-types';
 import Input from '../Input';
 import TextArea from '../TextArea';
 
-const Form = ({ btnText }) => {
-  //const [car] = useState(carData || {});
-  // const [preview, setPreview] = useState([]);
+const Form = ({ carData, btnText }) => {
+  const [car, setCar] = useState(carData || {});
+  const [preview, setPreview] = useState([]);
 
-  function fileOnChange() {
-    //
+  function fileOnChange(e) {
+    setPreview(Array.from(e.target.files));
+    setCar({ ...car, images: [...e.target.files] });
   }
 
-  function handleChange() {
-    //
+  function handleChange(e) {
+    setCar({ ...car, [e.target.name]: e.target.value });
+  }
+
+  function submit(e) {
+    e.preventDefault();
+    console.log(car);
+    //handleSubmit(car);
   }
 
   return (
-    <FormCar>
+    <FormCar onSubmit={submit}>
+      <Preview>
+        {preview.length > 0
+          ? preview.map((image, index) => (
+              <img
+                src={URL.createObjectURL(image)}
+                alt={car.name}
+                key={`${car.name}+${index}`}
+                className="img-fluid"
+              />
+            ))
+          : car.images &&
+            car.images.map((image, index) => (
+              <img
+                src={`${URL_API}/images/cars/${image}`}
+                alt={car.name}
+                key={`${car.name}+${index}`}
+                className="img-fluid"
+              />
+            ))}
+      </Preview>
       <Input
         text="Imagens do carro"
         type="file"
@@ -81,7 +109,7 @@ const Form = ({ btnText }) => {
 export default Form;
 
 Form.propTypes = {
-  // handleSubmit: PropTypes.func.isRequired,
-  // carData: PropTypes.object.isRequired,
+  //handleSubmit: PropTypes.func.isRequired,
+  carData: PropTypes.object.isRequired,
   btnText: PropTypes.string.isRequired,
 };
