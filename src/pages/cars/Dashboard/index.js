@@ -101,7 +101,15 @@ const Dashboard = () => {
                           </button>
                         </>
                       ) : (
-                        <p>vendido</p>
+                        <>
+                          <a>vendido</a>
+                          <button
+                            className="trash mx-3"
+                            onClick={() => handleDelete(car._id)}
+                          >
+                            <FaTrashAlt title="Excluir" />
+                          </button>
+                        </>
                       )}
                     </td>
                   </tr>

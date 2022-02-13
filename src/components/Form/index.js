@@ -20,7 +20,6 @@ const Form = ({ carData, handleSubmit, btnText }) => {
 
   function submit(e) {
     e.preventDefault();
-    console.log(car);
     handleSubmit(car);
   }
 
@@ -46,7 +45,6 @@ const Form = ({ carData, handleSubmit, btnText }) => {
               />
             ))}
       </Preview>
-      {console.log(preview)}
       <Input
         text="Imagens do carro"
         type="file"
