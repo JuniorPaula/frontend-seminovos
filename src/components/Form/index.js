@@ -36,8 +36,8 @@ const Form = ({ carData, handleSubmit, btnText }) => {
                 className="img-fluid"
               />
             ))
-          : car.image &&
-            car.image.map((image, index) => (
+          : car.images &&
+            car.images.map((image, index) => (
               <img
                 src={`${URL_API}/images/cars/${image}`}
                 alt={car.name}

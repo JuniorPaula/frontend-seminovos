@@ -76,7 +76,7 @@ const Dashboard = () => {
                   <tr>
                     <td>
                       <img
-                        src={`${URL_API}/images/cars/${car.image[0]}`}
+                        src={`${URL_API}/images/cars/${car.images[0]}`}
                         width="75"
                       />
                     </td>
