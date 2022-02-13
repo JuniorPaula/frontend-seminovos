@@ -3,8 +3,9 @@ import { Container, Nav, Table } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { URL_API } from '../../../config/urlApi';
 import { FaTrashAlt, FaRegEdit, FaPlus } from 'react-icons/fa';
-import api from '../../../utils/api';
 import { TableCar, Title } from './styled';
+import api from '../../../utils/api';
+import { toast } from 'react-toastify';
 
 const Dashboard = () => {
   const [cars, setCars] = useState([]);
@@ -21,6 +22,32 @@ const Dashboard = () => {
         setCars(response.data);
       });
   }, [token]);
+
+  /** método de exclusão de carro */
+  async function handleDelete(id) {
+    await api
+      .delete(`/cars/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+        },
+      })
+      .then((response) => {
+        const updatedCars = cars.filter((car) => car._id !== id);
+        setCars(updatedCars);
+
+        toast.success('Carro deletado com successo!', {
+          theme: 'dark',
+          toastId: 'succ',
+        });
+
+        return response.data;
+      })
+      .catch((err) => {
+        const msgErr = err.response.data.message;
+        toast.error(msgErr, { theme: 'dark', toastId: 'err_edit' });
+        return;
+      });
+  }
 
   return (
     <Container>
@@ -66,7 +93,10 @@ const Dashboard = () => {
                           <Nav.Link href={`/car/edit/${car._id}`}>
                             <FaRegEdit className="edit" title="Editar" />
                           </Nav.Link>
-                          <button className="trash">
+                          <button
+                            className="trash"
+                            onClick={() => handleDelete(car._id)}
+                          >
                             <FaTrashAlt title="Excluir" />
                           </button>
                         </>
