@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 import { URL_API } from '../../../config/urlApi';
 import { FaTrashAlt, FaRegEdit, FaPlus } from 'react-icons/fa';
 import { TableCar, Title } from './styled';
-import api from '../../../utils/api';
 import { toast } from 'react-toastify';
+import api from '../../../utils/api';
 
 const Dashboard = () => {
   const [cars, setCars] = useState([]);
@@ -90,7 +90,7 @@ const Dashboard = () => {
                       {car.available ? (
                         <>
                           {car.buyer && <button>concluir venda</button>}
-                          <Nav.Link href={`/car/edit/${car._id}`}>
+                          <Nav.Link href={`/cars/edit/${car._id}`}>
                             <FaRegEdit className="edit" title="Editar" />
                           </Nav.Link>
                           <button

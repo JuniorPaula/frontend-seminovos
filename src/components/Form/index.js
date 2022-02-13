@@ -36,8 +36,8 @@ const Form = ({ carData, handleSubmit, btnText }) => {
                 className="img-fluid"
               />
             ))
-          : car.images &&
-            car.images.map((image, index) => (
+          : car.image &&
+            car.image.map((image, index) => (
               <img
                 src={`${URL_API}/images/cars/${image}`}
                 alt={car.name}
@@ -46,6 +46,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
               />
             ))}
       </Preview>
+      {console.log(preview)}
       <Input
         text="Imagens do carro"
         type="file"
@@ -59,6 +60,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="model"
         placeholder="Digite o modelo do carro"
         handleOnChange={handleChange}
+        value={car.model || ''}
       />
       <Input
         text="Marca do carro"
@@ -66,6 +68,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="brand"
         placeholder="Digite a marca do carro"
         handleOnChange={handleChange}
+        value={car.brand || ''}
       />
       <Input
         text="Cor do carro"
@@ -73,6 +76,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="color"
         placeholder="Qual a cor do carro?"
         handleOnChange={handleChange}
+        value={car.color || ''}
       />
       <Input
         text="Km do carro"
@@ -80,6 +84,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="km"
         placeholder="Qual a kilometragem do carro?"
         handleOnChange={handleChange}
+        value={car.km || ''}
       />
       <Input
         text="Ano do carro"
@@ -87,6 +92,7 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="year"
         placeholder="Qual o ano do carro?"
         handleOnChange={handleChange}
+        value={car.year || ''}
       />
       <Input
         text="Valor do carro"
@@ -94,12 +100,14 @@ const Form = ({ carData, handleSubmit, btnText }) => {
         name="price"
         placeholder="Digite o valor do carro"
         handleOnChange={handleChange}
+        value={car.price || ''}
       />
       <TextArea
         text="Descrição do carro"
         name="description"
         rows="5"
         handleOnChange={handleChange}
+        value={car.description || ''}
       />
       <input type="submit" value={btnText} />
     </FormCar>
