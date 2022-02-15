@@ -49,6 +49,29 @@ const Dashboard = () => {
       });
   }
 
+  /** método para concluir a venda */
+  async function concludeSale(id) {
+    await api
+      .patch(`/cars/conclude/${id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+        },
+      })
+      .then((response) => {
+        toast.success(response.data.message, {
+          theme: 'dark',
+          toastId: 'sucesso',
+        });
+
+        return response.data;
+      })
+      .catch((err) => {
+        const msgErr = err.response.data.message;
+        toast.error(msgErr, { theme: 'dark', toastId: 'err' });
+        return;
+      });
+  }
+
   return (
     <Container>
       <Title>Dashboard</Title>
@@ -89,7 +112,14 @@ const Dashboard = () => {
                     <td className="actions">
                       {car.available ? (
                         <>
-                          {car.buyer && <button>concluir venda</button>}
+                          {car.buyer && (
+                            <button
+                              onClick={() => concludeSale(car._id)}
+                              className="btn btn-sm btn-success"
+                            >
+                              concluir venda
+                            </button>
+                          )}
                           <Nav.Link href={`/cars/edit/${car._id}`}>
                             <FaRegEdit className="edit" title="Editar" />
                           </Nav.Link>
