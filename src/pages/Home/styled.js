@@ -64,4 +64,6 @@ export const Title = styled.h1`
   margin: 20px 0 40px 0;
   color: ${secondayColor};
   font-size: 38px;
+  font-weight: 900;
+  letter-spacing: 2px;
 `;

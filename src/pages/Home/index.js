@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { URL_API } from '../../config/urlApi';
 import { CarsContainer, ImageCover, Title } from './styled';
-import api from '../../utils/api';
 import { Link } from 'react-router-dom';
 import { Col, Container, ListGroup, Row } from 'react-bootstrap';
+import api from '../../utils/api';
 
 const Home = () => {
   const [cars, setCar] = useState([]);
