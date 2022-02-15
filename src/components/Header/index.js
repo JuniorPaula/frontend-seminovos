@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { HeaderContainer } from './styled';
-import Logo from '../../assets/img/logo.png';
 import { Context } from '../../context/userContex';
 import { FaSignOutAlt } from 'react-icons/fa';
 import { Container, Nav, Navbar } from 'react-bootstrap';
@@ -13,19 +12,11 @@ const Header = () => {
       <Navbar collapseOnSelect expand="lg">
         <Container>
           <Navbar.Brand href="/">
-            <img
-              src={Logo}
-              width="40"
-              height="40"
-              className="d-inline-block align-top"
-              alt="logo shop car"
-            />
+            <h3 className="text-white">Seminovos</h3>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <h3>SHOP CAR</h3>
-            </Nav>
+            <Nav className="me-auto"></Nav>
             <Nav>
               <Nav.Link className="link" href="/">
                 Comprar
