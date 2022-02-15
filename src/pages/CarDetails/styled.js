@@ -34,6 +34,11 @@ export const DetailsContainer = styled.div`
       margin-right: 10px;
       font-size: 18px;
     }
+    .p-footer {
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
   }
 
   .box-right {

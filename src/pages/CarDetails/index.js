@@ -3,6 +3,7 @@ import { Col, Container, NavLink, Row } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 import { DetailsContainer, Title } from './styled';
 import { URL_API } from '../../config/urlApi';
+import { toast } from 'react-toastify';
 import api from '../../utils/api';
 
 const CarDetails = () => {
@@ -12,8 +13,33 @@ const CarDetails = () => {
 
   useEffect(() => {
     api.get(`/cars/${id}`).then((response) => setCar(response.data));
-    console.log(car);
   }, [id]);
+
+  /** metodo para criar a negociação */
+  async function schedule() {
+    const data = await api
+      .patch(`/cars/schedule/${car._id}`, {
+        headers: {
+          Authorization: `Bearer ${JSON.parse(token)}`,
+        },
+      })
+      .then((response) => {
+        toast.success(response.data.message, {
+          theme: 'dark',
+          toastId: 'success',
+        });
+        return response.data;
+      })
+      .catch((err) => {
+        toast.error(err.response.data.message, {
+          theme: 'dark',
+          toastId: 'error',
+        });
+        return;
+      });
+
+    return data;
+  }
 
   return (
     <DetailsContainer>
@@ -52,13 +78,15 @@ const CarDetails = () => {
                 <span className="bold">Valor:</span> R$ {car.price}
               </p>
               {token ? (
-                <button className="btn btn-success">Negociar</button>
+                <button onClick={schedule} className="btn btn-success">
+                  Negociar
+                </button>
               ) : (
-                <p>
+                <span className="p-footer">
                   Você precisa{' '}
                   <NavLink href="/register">criar uma conta</NavLink> para
                   negociar a venda.
-                </p>
+                </span>
               )}
             </Col>
             <Col md={6} className="box-right">
