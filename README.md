@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# API projeto seminovo e usados
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
-## Available Scripts
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-In the project directory, you can run:
+![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Aplicação **Frontend** desenvolvida em **ReactJS**.
 
-### `npm test`
+Trata-se de uma aplicação de comércio de carros, venda de seminovos e usados. A aplicação está consumindo os dados da **API**
+[API-seminovos](https://github.com/JuniorPaula/api-seminovos)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Images
+```
+![image 1](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img1.png)
+```
 
-### `npm run build`
+```
+![image 2](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img2.png)
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ ```
+![image 3](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img3.png)
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Responsive
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+![image 4](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img4.png)
+```
 
-### `npm run eject`
+```
+![image 5](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img5.png)
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+![image 6](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img6.png)
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+![image 6](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img6.png)
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+![image 7](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img7.png)
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+![image 8](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img8.png)
+```
 
-## Learn More
+```
+![image 9](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img9.png)
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+![image 10](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img10.png)
+```
