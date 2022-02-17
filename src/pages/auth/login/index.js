@@ -43,7 +43,7 @@ const Login = () => {
           <input type="submit" value="Entrar" />
         </form>
         <p>
-          Ainda não tem conta ? <Link to="/login">click aqui!</Link>
+          Ainda não tem conta ? <Link to="/register">click aqui!</Link>
         </p>
       </div>
     </LoginContainer>

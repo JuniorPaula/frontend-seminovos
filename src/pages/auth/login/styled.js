@@ -31,5 +31,9 @@ export const LoginContainer = styled.div`
     img {
       width: 450px;
     }
+
+    @media (max-width: 480px) {
+      display: none;
+    }
   }
 `;

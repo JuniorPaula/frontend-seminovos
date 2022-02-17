@@ -1,9 +1,5 @@
 import styled from 'styled-components';
-import {
-  lightGreenColor,
-  primaryColor,
-  secondayColor,
-} from '../../../config/colors';
+import { primaryColor, secondayColor } from '../../../config/colors';
 
 export const RegisterContainer = styled.div`
   display: flex;
@@ -12,7 +8,6 @@ export const RegisterContainer = styled.div`
 
   .box-right {
     flex: 1;
-    // background-color: ${lightGreenColor};
     padding: 30px 50px;
     border-radius: 10px;
     color: ${primaryColor};
@@ -32,6 +27,10 @@ export const RegisterContainer = styled.div`
 export const Title = styled.h2`
   color: ${secondayColor};
   font-size: 3em;
+
+  @media (max-width: 480px) {
+    font-size: 22px;
+  }
 
   .destaque {
     color: ${primaryColor};
