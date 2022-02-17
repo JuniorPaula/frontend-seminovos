@@ -15,9 +15,9 @@ Trata-se de uma aplicação de comércio de carros, venda de seminovos e usados.
 [API-seminovos](https://github.com/JuniorPaula/api-seminovos)
 
 ### Images
-```
+
 ![image 1](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img1.png)
-```
+
 
 ```
 ![image 2](https://github.com/JuniorPaula/frontend-seminovos/img-readme/img2.png)
